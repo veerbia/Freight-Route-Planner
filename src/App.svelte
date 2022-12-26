@@ -81,13 +81,30 @@
           // console.log(data); // log the weather data to the console as {"lat": lat, "lng": lng, "temperature": temperature, "wind_speed": wind_speed, "visibility": visibility, "weather": weather}
           weatherData.push(data);
         }
-        // Generate a summary of the weather along the route
-        summary = await generateWeatherSummary(weatherData);
-        console.log(summary); // log the summary to the console
+        const element = document.getElementById("text-container");
+        element.scrollIntoView({ behavior: "smooth"});
+
+        document.getElementById('report-container').style.visibility = 'visible';
+        document.getElementById('summary-container').style.visibility = 'visible';
 
         // Generate a report of the weather along the route and recommendations
         report = await generateReport(weatherData);
-        console.log(report); // log the report to the console
+        // console.log(report); // log the report to the console
+        // Generate a summary of the weather along the route
+        summary = await generateWeatherSummary(weatherData);
+        // console.log(summary); // log the summary to the console
+
+        // Display the report in a "typewriter" style
+        const reportElement = document.getElementById("report");
+        let i = 0;
+        const typeWriter = setInterval(() => {
+          if (i < report.length) {
+            reportElement.innerHTML += report.charAt(i);
+            i++;
+          } else {
+            clearInterval(typeWriter);
+          }
+        }, 25);
 
       } else {
         // If the request fails, display an error message
@@ -151,7 +168,7 @@
   }
 </script>
 
-<h1>Freight Route Planner</h1>
+<h1>🚚 Freight Route Planner</h1>
 <!-- Place the endpoints input boxes and get directions button next to the map, stacked vertically -->
 <div id="map-container">
   <div id="inputs">
@@ -171,4 +188,21 @@
   </div>
   <div id="map" />
 </div>
+<div id="text-container">
+  <div id="report-container" style="visibility: hidden">
+    <h2>Weather Summary: </h2>
+  </div>
+  <div id="report"></div>
+  <div id="summary-container" style="visibility: hidden">
+    <h2>Route Summary: </h2>
+    <div id="summary">
+      <div class="summary-item"><strong> Average Temperature:</strong> {summary.averageTemperature} °C 🧥</div>
+      <div class="summary-item"><strong>Average Wind Speed:</strong> {summary.averageWindSpeed} m/s 💨</div>
+      <div class="summary-item"><strong>Average Visibility:</strong> {summary.averageVisibility} m 👀</div>
+      <div class="summary-item"><strong>Most Common Weather:</strong> {summary.mostCommonWeather} ☁️</div>
+    </div>
+  </div>
+</div>
+
+
 

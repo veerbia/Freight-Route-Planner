@@ -12,13 +12,13 @@ def generate_report(weather_data):
 
     # Generate the summary based on the most common weather condition
     if most_common_weather == 'Clear':
-        common_summary = 'Overall, the route is expected to be clear ☀️ '
+        common_summary = 'Overall, the route is expected to be clear ☀️  '
     elif most_common_weather == 'Rain':
-        common_summary = 'Overall, the route is expected to be rainy 🌧️ '
+        common_summary = 'Overall, the route is expected to be rainy 🌧️  '
     elif most_common_weather == 'Clouds':
-        common_summary = 'Overall, the route is expected to be cloudy ☁️ '
+        common_summary = 'Overall, the route is expected to be cloudy ☁️  '
     else:
-        common_summary = 'Overall, the weather conditions on the route are expected to vary ⛅ '
+        common_summary = 'Overall, the weather conditions on the route are expected to vary ⛅  '
 
     # Initialize variables to store the weather conditions and recommendations
     weatherConditions = []

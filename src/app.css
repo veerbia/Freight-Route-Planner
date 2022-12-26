@@ -111,3 +111,56 @@ h1 {
   width: 900px;
   height: 600px;
 }
+
+#text-container {
+  margin-top:30px;
+  height: 600px;
+  width: 1200px;
+}
+
+#report {
+  /* display: flex;
+  flex-direction: column; */
+  font-size:30px;
+  text-align: bottom;
+  margin-top: 20px;
+  width: 100%; /* set the width to 80% of the container */
+  max-width: 1200px; /* set the maximum width to 800px */
+  line-height: 1.5;
+  margin: 0 auto; /* center the text horizontally */
+}
+
+#summary {
+  font-size: 30px;
+  text-align: bottom;
+  margin-top: 20px;
+  width: 100%; /* set the width to 80% of the container */
+  max-width: 1100px; /* set the maximum width to 800px */
+  line-height: 1.5;
+  margin: 0 auto; /* center the text horizontally */
+}
+
+#summary {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.summary-item {
+  width: 45%;
+  background-color: transparent;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px;
+  border: 2px solid white;
+}
+
+.summary-item span {
+  font-weight: bold;
+  color: blue;
+}
+
+
+
+

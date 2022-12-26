@@ -1,33 +1,27 @@
 def generate_weather_summary(weather_data):
     total_temperature = 0
-    min_temperature = float("inf")
-    max_temperature = float("-inf")
+    total_wind_speed = 0
+    total_visibility = 0
     weather_count = {}
-    windiest_location = {"lat": None, "lng": None, "wind_speed": 0}
     
     # Iterate over the weather data to calculate the summary
     for data in weather_data:
-        # Calculate the total temperature and find the min and max temperatures
+        # Calculate the total temperature, wind speed, and visibility
         total_temperature += data["temperature"]
-        min_temperature = min(min_temperature, data["temperature"])
-        max_temperature = max(max_temperature, data["temperature"])
+        total_wind_speed += data["wind_speed"]
+        total_visibility += data["visibility"]
         
         # Update the weather count
         if data["weather"] not in weather_count:
             weather_count[data["weather"]] = 1
         else:
             weather_count[data["weather"]] += 1
-        
-        # Update the windiest location
-        if data["wind_speed"] > windiest_location["wind_speed"]:
-            windiest_location = {
-                "lat": data["lat"],
-                "lng": data["lng"],
-                "wind_speed": data["wind_speed"],
-            }
+    
     
     # Calculate the average temperature
     average_temperature = total_temperature / len(weather_data)
+    average_wind_speed = total_wind_speed / len(weather_data)
+    average_visibility = total_visibility / len(weather_data)
     
     # Find the most common weather condition
     most_common_weather = None
@@ -39,9 +33,8 @@ def generate_weather_summary(weather_data):
     
     # Return the summary
     return {
-        "averageTemperature": average_temperature,
-        "minTemperature": min_temperature,
-        "maxTemperature": max_temperature,
+        "averageTemperature": int(average_temperature),
         "mostCommonWeather": most_common_weather,
-        "windiestLocation": windiest_location,
+        "averageWindSpeed": int(average_wind_speed),
+        "averageVisibility": int(average_visibility)
     }
