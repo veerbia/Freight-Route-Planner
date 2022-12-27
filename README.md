@@ -4,8 +4,7 @@ Simple, blazingly-fast web application that allows freight drivers to plan out t
 
 https://user-images.githubusercontent.com/102765426/209590320-560d0313-ef59-48c8-81f2-87ddceb5e17a.mp4
 
-![Route Demo](https://user-images.githubusercontent.com/102765426/209590421-0c1d733b-62d1-4fda-8137-0f48815232df.png)
-![Route Summary](https://user-images.githubusercontent.com/102765426/209590439-d0f4a2ce-80ea-4bc3-ac54-cb34b5e53cc3.png)
+
 
 
 ## Solution
@@ -59,7 +58,8 @@ flask run
 ```
 This will start the Svelte application and the Flask server, allowing you to access the application in your web browser at http://localhost:5173.
 
-
+![Route Demo](https://user-images.githubusercontent.com/102765426/209590421-0c1d733b-62d1-4fda-8137-0f48815232df.png)
+![Route Summary](https://user-images.githubusercontent.com/102765426/209590439-d0f4a2ce-80ea-4bc3-ac54-cb34b5e53cc3.png)
 
 
 
