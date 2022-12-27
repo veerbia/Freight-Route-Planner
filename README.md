@@ -1,47 +1,64 @@
-# Svelte + Vite
+# Freight Route Planner
 
-This template should help get you started developing with Svelte in Vite.
+Simple, blazingly-fast web application that allows freight drivers to plan out their route based on current weather patterns, load-size and equipment. Built over a weekend during winter break. Inspired by the millions of hard-working delivery drivers who have to work especially hard over the holiday season. This application aims to make their jobs easier and more efficient by providing them with the tools they need to navigate the roads safely and efficiently.
 
-## Recommended IDE Setup
+![Route Demo](public/route-demo.png) ![Summary Demo](public/summary-demo.png)
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+## Solution
+Freight Route Planner is a web application that allows trucking companies to easily plan and optimize their routes by taking into account various factors such as weather and the load being carried. Many trucking companies struggle to efficiently plan and optimize their routes, resulting in wasted time and fuel. This application is designed to be simple, fast, and responsive, providing users with the necessary information to make informed decisions about their routes.
 
-## Need an official Svelte framework?
+With Freight Route Planner, users can input the start and end points of their freight route and receive a summary and report of the weather along the route. This includes information on visibility, temperature, wind speed, precipitation, and any weather advisories. The application also provides recommendations on the best time to leave based on the weather, as well as suggestions for the type of tires to use and visibility conditions. The summaries are generated using natural language generation techniques to provide a more readable and user-friendly experience.
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+## Features
+- Input start and end points for freight routes
+- Calculate the best route based on various factors such as weather and load
+- Provide a detailed summary and report of the weather along the route, including visibility, temperature, wind speed, precipitation, and any weather advisories
+- Recommend the best time to leave based on the weather
+- Suggest the appropriate tires to use based on the weather and road conditions
+- Improve visibility and safety for truck drivers on the road
+- Monitor real-time traffic conditions along the route and adjust the route as needed
+- Estimate the cost of the route based on fuel consumption and tolls
+- Allow users to customize their routes by adding waypoints or avoiding certain areas
+- Save and manage multiple routes for easy access and comparison
 
-## Technical considerations
+## Technical Details
+Freight Route Planner is a web application built using the Svelte framework and a Python server using the Flask framework to handle the backend logic. The Svelte framework was chosen for its lightweight and efficient design, which allows for fast and responsive performance. Svelte uses a reactive approach to building user interfaces, meaning that the application only updates the parts of the page that need to change, rather than rebuilding the entire page every time. This results in a smooth and seamless user experience.
 
-**Why use this over SvelteKit?**
+The Flask framework was chosen for its simplicity and ease of use. It is a popular choice for building web servers and APIs, and is well-suited for small to medium-sized projects. It provides a lightweight and flexible way to handle HTTP requests and responses, and can be easily extended with a wide range of plugins and libraries.
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
-
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
-
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
-
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
-
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
-
-**Why include `.vscode/extensions.json`?**
-
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
-
-**Why enable `checkJs` in the JS template?**
-
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
-
-**Why is HMR not preserving my local component state?**
-
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/rixo/svelte-hmr#svelte-hmr).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
+To set up the application, you will need to install the necessary dependencies and configure the API keys. First, you will need to install Node.js, which is required to run the Svelte application. You can download the latest version of Node.js from the official website (https://nodejs.org/). Once Node.js is installed, you can install the Svelte CLI by running the following command:
 ```
+npm install -g svelte-cli
+```
+Next, you will need to install the necessary Python dependencies for the Flask server. You will need to have Python 3 installed on your system. You can check if you already have Python installed by running the following command:
+```
+python --version
+```
+If Python is not installed, you can download the latest version from the official website (https://www.python.org/). Once Python is installed, you can create a virtual environment and install the necessary dependencies by running the following commands:
+```
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+Finally, you will need to obtain API keys for the Google Maps API and the OpenWeatherMap API. You can sign up for these services on their respective websites and obtain your API keys. Once you have your keys, you will need to create a file called secrets.py in the root directory of the project, and add the following lines, replacing YOUR_API_KEY with your actual API key:
+```javascript
+GOOGLE_MAPS_API_KEY = 'YOUR_API_KEY'
+OPENWEATHERMAP_API_KEY = 'YOUR_API_KEY'
+```
+With the dependencies installed and the API keys configured, you can start the application by running the following commands:
+```
+cd frontend
+npm install
+npm run build
+cd ..
+flask run
+```
+This will start the Svelte application and the Flask server, allowing you to access the application in your web browser at http://localhost:5173.
+
+
+
+
+
+
+
+
