@@ -2,11 +2,9 @@
 
 Simple, blazingly-fast web application that allows freight drivers to plan out their route based on current weather patterns, load-size and equipment. Built over a weekend during winter break. Inspired by the millions of hard-working delivery drivers who have to work especially hard over the holiday season. This application aims to make their jobs easier and more efficient by providing them with the tools they need to navigate the roads safely and efficiently.
 
-![Route Demo](public/route-demo.png) ![Summary Demo](public/summary-demo.png)
-
-
 https://user-images.githubusercontent.com/102765426/209590320-560d0313-ef59-48c8-81f2-87ddceb5e17a.mp4
 
+![Route Demo](public/route-demo.png public/summary-demo.png)
 
 ## Solution
 Freight Route Planner is a web application that allows trucking companies to easily plan and optimize their routes by taking into account various factors such as weather and the load being carried. Many trucking companies struggle to efficiently plan and optimize their routes, resulting in wasted time and fuel. This application is designed to be simple, fast, and responsive, providing users with the necessary information to make informed decisions about their routes.
