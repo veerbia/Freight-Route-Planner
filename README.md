@@ -1,6 +1,6 @@
 # Freight Route Planner
 
-Simple, blazingly-fast web application that allows freight drivers to plan out their route based on current weather patterns, load-size and equipment. Built over a weekend during winter break. Inspired by the millions of hard-working delivery drivers who have to work especially hard over the holiday season. This application aims to make their jobs easier and more efficient by providing them with the tools they need to navigate the roads safely and efficiently.
+Simple, blazingly-fast web application that allows freight drivers to plan out their route based on real-time weather patterns, load-size and equipment. Built over a weekend during winter break. Inspired by the millions of hard-working delivery drivers who have to work especially hard over the holiday season. This application aims to make their jobs easier and more efficient by providing them with the tools they need to navigate the roads safely and efficiently.
 
 https://user-images.githubusercontent.com/102765426/209590320-560d0313-ef59-48c8-81f2-87ddceb5e17a.mp4
 
